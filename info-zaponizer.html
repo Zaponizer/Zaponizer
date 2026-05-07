@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zaponizer — Информация</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <meta name="color-scheme" content="dark" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar__inner">
+        <a class="brand" href="./index.html" aria-label="Home">
+          <span class="brand__dot"></span>
+          <span class="brand__text">Z/S</span>
+        </a>
+        <nav class="topbar__nav" aria-label="Primary">
+          <a class="topbtn" href="./about.html" data-i18n="nav.about">О создателе</a>
+          <button class="topbtn" type="button" data-auth="open" data-i18n="nav.login">Вход</button>
+          <a class="topbtn is-hidden" href="./profile.html" data-auth="profileLink">
+            <span data-i18n="nav.profile">Профиль</span>
+          </a>
+          <button class="langbtn" type="button" data-lang="toggle">
+            <span class="langbtn__globe" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18" focusable="false">
+                <path
+                  d="M12 2a10 10 0 1 0 10 10A10.01 10.01 0 0 0 12 2Zm7.93 9h-3.15a15.5 15.5 0 0 0-1.2-5A8.02 8.02 0 0 1 19.93 11ZM12 4c.9 1.24 1.72 3.18 2.2 7H9.8c.48-3.82 1.3-5.76 2.2-7ZM4.07 13h3.15a15.5 15.5 0 0 0 1.2 5A8.02 8.02 0 0 1 4.07 13Zm3.15-2H4.07a8.02 8.02 0 0 1 4.35-5 15.5 15.5 0 0 0-1.2 5ZM12 20c-.9-1.24-1.72-3.18-2.2-7h4.4c-.48 3.82-1.3 5.76-2.2 7Zm4.58-2a15.5 15.5 0 0 0 1.2-5h3.15a8.02 8.02 0 0 1-4.35 5Zm-6.78-5c.2 1.64.54 3.1.96 4.23.26.71.55 1.3.86 1.77A8.02 8.02 0 0 1 9.1 13Zm3.58 6c.3-.47.6-1.06.86-1.77.42-1.13.76-2.59.96-4.23h2.52a13.2 13.2 0 0 1-1.24 4.56A8.2 8.2 0 0 1 13.38 19ZM14.9 11c-.2-1.64-.54-3.1-.96-4.23-.26-.71-.55-1.3-.86-1.77A8.02 8.02 0 0 1 14.9 11Zm-3.58-6c-.3.47-.6 1.06-.86 1.77-.42 1.13-.76 2.59-.96 4.23H6.98a13.2 13.2 0 0 1 1.24-4.56A8.2 8.2 0 0 1 11.32 5Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <span class="langbtn__text" data-lang="label">RU</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <canvas class="ash" data-particles="canvas" aria-hidden="true"></canvas>
+
+    <main class="page">
+      <div class="card">
+        <h1 class="h1"><span class="muted">Zaponizer</span> — <span data-i18n="menu.info">Информация</span></h1>
+        <p class="p muted">
+          Заполните этот раздел контентом про “Zaponizer”.
+        </p>
+        <a class="topbtn" href="./index.html">← Home</a>
+      </div>
+    </main>
+
+    <div class="modal is-hidden" role="dialog" aria-modal="true" data-auth="modal">
+      <div class="modal__backdrop" data-auth="close"></div>
+      <div class="modal__card" role="document">
+        <div class="modal__top">
+          <div class="modal__tabs" role="tablist">
+            <button class="tab is-active" type="button" data-auth="tab" data-tab="login" role="tab">
+              <span data-i18n="auth.login">Вход</span>
+            </button>
+            <button class="tab" type="button" data-auth="tab" data-tab="register" role="tab">
+              <span data-i18n="auth.register">Регистрация</span>
+            </button>
+          </div>
+          <button class="iconbtn" type="button" data-auth="close" aria-label="Close">✕</button>
+        </div>
+        <div class="modal__body">
+          <form class="form" data-auth="form" data-form="login">
+            <label class="field">
+              <span class="field__label" data-i18n="auth.nickname">Никнейм</span>
+              <input class="field__input" name="nickname" autocomplete="username" required />
+            </label>
+            <label class="field">
+              <span class="field__label" data-i18n="auth.password">Пароль</span>
+              <input class="field__input" type="password" name="password" autocomplete="current-password" required />
+            </label>
+            <button class="neon-btn neon-btn--wide" type="submit" data-i18n="auth.login">Вход</button>
+            <p class="form__hint" data-auth="hint"></p>
+          </form>
+          <form class="form is-hidden" data-auth="form" data-form="register">
+            <label class="field">
+              <span class="field__label" data-i18n="auth.nickname">Никнейм</span>
+              <input class="field__input" name="nickname" autocomplete="username" required />
+            </label>
+            <label class="field">
+              <span class="field__label" data-i18n="auth.password">Пароль</span>
+              <input class="field__input" type="password" name="password" autocomplete="new-password" minlength="4" required />
+            </label>
+            <button class="neon-btn neon-btn--wide" type="submit" data-i18n="auth.register">Регистрация</button>
+            <p class="form__hint" data-auth="hint"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="./assets/particles.js"></script>
+    <script src="./assets/app.js"></script>
+  </body>
+</html>
+
